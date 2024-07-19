@@ -1,9 +1,3 @@
-# Написать тест на проверку названия Issue в репозитории через Web-интерфейс.
-#
-#
-# 2. Лямбда шаги через with allure.step
-#
-# 4. Разметку тестов всеми аннотациями
 import allure
 from selene.support import by
 from selene.support.conditions import be
@@ -35,6 +29,7 @@ def test_decorator_steps():
     open_issue_tab()
     should_see_issue_with_number('#76')
 
+
 @allure.step('Открывем главную страницу')
 def open_main_page():
     browser.open('/')
@@ -54,6 +49,7 @@ def go_to_repository(repo):
 @allure.step('Открываем таб  Issues')
 def open_issue_tab():
     browser.element('[id="issues-tab"]').click()
+
 
 @allure.step('Проверяем наличие issue с номером {number}')
 def should_see_issue_with_number(number):
