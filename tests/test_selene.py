@@ -1,8 +1,3 @@
-# Написать тест на проверку названия Issue в репозитории через Web-интерфейс.
-#
-# 1. Чистый Selene (без шагов)
-#
-# 4. Разметку тестов всеми аннотациями
 from selene.support import by
 from selene.support.conditions import be
 from selene.support.shared import browser
