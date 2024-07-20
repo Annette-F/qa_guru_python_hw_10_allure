@@ -7,7 +7,7 @@ def test_dynamic_labels():
     allure.dynamic.severity(Severity.NORMAL)
     allure.dynamic.label('owner', 'Annette-F')
     allure.dynamic.feature('Задачи в репозитории')
-    allure.dynamic.story('Не авторизованный пользователь не может создать задачу в репозитори')
+    allure.dynamic.story('Не авторизованный пользователь не может создать задачу в репозитории')
     allure.dynamic.link('https://github.com', name='Testing')
 
 

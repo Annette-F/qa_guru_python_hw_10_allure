@@ -1,7 +1,5 @@
 import allure
-from selene.support import by
-from selene.support.conditions import be
-from selene.support.shared import browser
+from selene import browser, be, by
 
 
 def test_dynamic_steps():
@@ -10,13 +8,13 @@ def test_dynamic_steps():
 
     with allure.step('Ищем репозиторий'):
         browser.element('[data-target="qbsearch-input.inputButtonText"]').click()
-        browser.element('[id="query-builder-test"]').send_keys('/eroshenkoam/allure-example').press_enter()
+        browser.element('#query-builder-test').send_keys('/eroshenkoam/allure-example').press_enter()
 
     with allure.step('Переходим по ссылке репозитория'):
         browser.element(by.link_text('eroshenkoam/allure-example')).click()
 
     with allure.step('Открываем таб  Issues'):
-        browser.element('[id="issues-tab"]').click()
+        browser.element('#issues-tab').click()
 
     with allure.step('Проверяем наличие issue с номером 76'):
         browser.element(by.partial_text('#76')).should(be.visible)
@@ -38,7 +36,7 @@ def open_main_page():
 @allure.step('Ищем репозиторий {repo}')
 def search_for_repository(repo):
     browser.element('[data-target="qbsearch-input.inputButtonText"]').click()
-    browser.element('[id="query-builder-test"]').send_keys(repo).press_enter()
+    browser.element('#query-builder-test').send_keys(repo).press_enter()
 
 
 @allure.step('Переходим по ссылке репозитория {repo}')
@@ -48,7 +46,7 @@ def go_to_repository(repo):
 
 @allure.step('Открываем таб  Issues')
 def open_issue_tab():
-    browser.element('[id="issues-tab"]').click()
+    browser.element('#issues-tab').click()
 
 
 @allure.step('Проверяем наличие issue с номером {number}')
